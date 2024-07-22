@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Uploaded Image</h1>
+        <img src="{{ url_for('static', filename='uploads/' + image_path.split('/')[-1]) }}" alt="Uploaded Image" class="uploaded-image">
+        <h2>Similar Images</h2>
+        <div class="similar-images">
+            {% for image in similar_images %}
+                <img src="{{ url_for('static', filename=image) }}" alt="Similar Image" class="similar-image">
+            {% endfor %}
+        </div>
+        <a href="{{ url_for('index') }}" class="back-link">Upload another image</a>
+    </div>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        
+        .container {
+            background-color: #fff;
+            padding: 2em;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        h1, h2 {
+            color: #343a40;
+        }
+        
+        .file-input {
+            margin: 1em 0;
+            padding: 0.5em;
+            border: 1px solid #ced4da;
+            border-radius: 4px;
+            font-size: 1em;
+        }
+        
+        .submit-btn {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 0.5em 1em;
+            font-size: 1em;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .submit-btn:hover {
+            background-color: #0056b3;
+        }
+        
+        .uploaded-image, .similar-image {
+            width: 224px;
+            height: 224px;
+            object-fit: cover;
+            margin: 1em;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .similar-images {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .back-link {
+            display: inline-block;
+            margin-top: 1em;
+            color: #007bff;
+            text-decoration: none;
+            font-size: 1em;
+        }
+        
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        
+    </style>
+</body>
+</html>

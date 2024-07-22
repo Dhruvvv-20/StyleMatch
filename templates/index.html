@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Image Search</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class = "box">
+    <h1> StyleMatch - Your Ultimate Fashion Recommendation System </h1>
+    <div class="container">
+        <h1>Upload an Image</h1>
+        <form action="/" method="post" enctype="multipart/form-data">
+            <input type="file" name="file" class="file-input">
+            <input type="submit" value="Upload" class="submit-btn">
+        </form>
+    </div>
+    </div>
+    <style>
+        .box{
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+            padding-bottom: 120px;
+            
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #f0e6ff, #e6fcff);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        
+        .container {
+            background-color: #fff;
+            padding: 2em;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        h1, h2 {
+            color: #343a40;
+        }
+        
+        .file-input {
+            margin: 1em 0;
+            padding: 0.5em;
+            border: 1px solid #ced4da;
+            border-radius: 4px;
+            font-size: 1em;
+            text-align: center;
+        }
+        
+        .submit-btn {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 0.5em 1em;
+            font-size: 1em;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            text-align: center;
+        }
+        
+        .submit-btn:hover {
+            background-color: #0056b3;
+        }
+        
+        .uploaded-image, .similar-image {
+            width: 224px;
+            height: 224px;
+            object-fit: cover;
+            margin: 1em;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .similar-images {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .back-link {
+            display: inline-block;
+            margin-top: 1em;
+            color: #007bff;
+            text-decoration: none;
+            font-size: 1em;
+        }
+        
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        
+    </style>
+</body>
+</html>
